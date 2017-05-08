@@ -3,5 +3,5 @@ php:
   - 5.5
   - 5.4
   - hhvm
-after_success:
+script:
   - phpunit Test.php
