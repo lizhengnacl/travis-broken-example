@@ -4,7 +4,7 @@
   "description": "An example that will cause a build failure",
   "main": "index.js",
   "scripts": {
-    "test": "yarn version"
+    "test": "yarn version && exit 0"
   },
   "repository": {
     "type": "git",
