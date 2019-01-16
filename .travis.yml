@@ -16,8 +16,8 @@ script:
 after_script:
   - cd ./tmp
   - echo "from blog branch" > out.md
-  - git config user.name "lizhengnacl"
-  - git config user.email "lizhengnacl@163.com"
+#  - git config user.name "lizhengnacl"
+#  - git config user.email "lizhengnacl@163.com"
   - git add .
   - git commit -m "update by Travis-CI"
   - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" blog:master # 部署机器上git init默认分支为master，推送到远程master分支
