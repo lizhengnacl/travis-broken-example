@@ -15,6 +15,7 @@ script:
   - ls
 after_script:
   - cd ./tmp
+  - rm .travis.yml
   - echo "from blog branch" > out.md
 #  - git config user.name "lizhengnacl"
 #  - git config user.email "lizhengnacl@163.com"
