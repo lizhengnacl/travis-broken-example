@@ -15,13 +15,12 @@ script:
   - ls
 after_script:
   - cd ./tmp
-  - echo "after script" > out.md
-  - git init
+  - echo "from blog branch" > out.md
   - git config user.name "lizhengnacl"
   - git config user.email "lizhengnacl@163.com"
   - git add .
   - git commit -m "update by Travis-CI"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master # 部署机器上git init默认分支为master，推送到远程master分支
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" blog:master # 部署机器上git init默认分支为master，推送到远程master分支
 branches:
   only:
     - blog
