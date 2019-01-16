@@ -10,7 +10,7 @@ install:
   - npm i
 before_script:
   - npm install -g mocha
-  - git clone --branch=blog "${GITHUB_REF}"
+  - git clone --branch=blog git@github.com:lizhengnacl/travis-broken-example.git
 script:
   - ls
 after_script:
