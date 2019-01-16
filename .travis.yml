@@ -20,10 +20,10 @@ after_script:
   - git config user.email "lizhengnacl@163.com"
   - git add .
   - git commit -m "update by Travis-CI"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" blog:master
 branches:
   only:
-    - blog  #只监测这个分支，一有动静就开始构建
+    - blog
 env:
   global:
-    - GITHUB_REF: https://github.com/lizhengnacl/travis-broken-example.git
+    - GITHUB_REF: github.com/lizhengnacl/travis-broken-example.git
