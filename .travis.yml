@@ -10,10 +10,11 @@ install:
   - npm i
 before_script:
   - npm install -g mocha
-  - git clone --branch=blog https://github.com/lizhengnacl/travis-broken-example.git
+  - git clone --branch=blog https://github.com/lizhengnacl/travis-broken-example.git tmp # 下载到临时目录
 script:
   - ls
 after_script:
+  - cd ./tmp
   - echo "after script" > out.md
   - git init
   - git config user.name "lizhengnacl"
