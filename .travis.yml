@@ -10,7 +10,7 @@ install:
   - npm i
 before_script:
   - npm install -g mocha
-  - git clone --branch=blog git@github.com:lizhengnacl/travis-broken-example.git
+  - git clone --branch=blog https://github.com/lizhengnacl/travis-broken-example.git
 script:
   - ls
 after_script:
@@ -26,4 +26,4 @@ branches:
     - blog  #只监测这个分支，一有动静就开始构建
 env:
   global:
-    - GITHUB_REF: git@github.com:lizhengnacl/travis-broken-example.git
+    - GITHUB_REF: https://github.com/lizhengnacl/travis-broken-example.git
