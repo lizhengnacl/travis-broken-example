@@ -1,2 +1,29 @@
-language: node_js   #设置语言
-node_js: stable     #设置相应的版本
+language: node_js
+node_js: stable
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm install -g hexo
+  - npm install -g hexo-cli
+install:
+  - npm i
+before_script:
+  - npm install -g mocha
+  - git clone --branch=blog "${GITHUB_REF}"
+script:
+  - ls
+after_script:
+  - echo "after script" > out.md
+  - git init
+  - git config user.name "lizhengnacl"
+  - git config user.email "lizhengnacl@163.com"
+  - git add .
+  - git commit -m "update by Travis-CI"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
+branches:
+  only:
+    - blog  #只监测这个分支，一有动静就开始构建
+env:
+  global:
+    - GITHUB_REF: git@github.com:lizhengnacl/travis-broken-example.git
